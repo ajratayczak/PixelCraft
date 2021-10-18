@@ -274,6 +274,9 @@ path {
 }
 </style>
 </head>
+
+
+<!-- This is the start of the body -->
 <body>
     <div class="menubtn">☰</div>
     <ul class="menu">
@@ -283,11 +286,13 @@ path {
       <li onclick="install()">Install PWA</li>
       <li><a href="https://github.com/rgab1508/PixelCraft" target="_blank"><i class="fab fa-github"></i>Github</a></li>
     </ul>
+
     <div id="popup">
       <h3>Select the Dimensions Of the grid</h3>
       <input type="text" id="width" value="16">X<input type="text" id="height" value="16">
       <button id="close">OK</button>
     </div>
+
     <div id="frames" onblur="Frames.close()" tabindex="0">
     <div class="btn" style="left: 10px;" onclick="document.querySelector('#frames #gallery').scrollLeft-=100;"><i class="fa fa-chevron-left"></i></div>
     <div class="btn" style="right: 10px;" onclick="document.querySelector('#frames #gallery').scrollLeft+=100;"><i class="fa fa-chevron-right"></i></div>
@@ -311,6 +316,9 @@ path {
     </div>
     <div id="palette"></div>
 </body>
+
+
+<!-- This is the start of the script -->
 <script type="text/javascript">
 var Tool = {
   "pen": 0,
@@ -424,14 +432,18 @@ class Canvas {
       this.active = false;
     });
   }
+  <!-- drawing function -->
   draw(x, y, count) {
   	if (x >= 0 && x < this.width && y >= 0 && y < this.height) {
+        <!-- if statement determines if pixel to be places is on screen -->
     	this.data[x][y] = this.color;
     	this.ctx.fillRect(Math.floor(x * (this.w / this.width)), Math.floor(y * (this.h / this.height)), Math.floor(this.w / this.width), Math.floor(this.h / this.height));
     	if (!count && JSON.stringify(this.steps[this.steps.length-1])!==JSON.stringify([x,y,this.color,this.ctx.globalAlpha])) this.steps.push([x,y,this.color,this.ctx.globalAlpha]);
 	}
   }
+  <!-- erasing function -->
   erase(x, y){
+    <!-- sets pixel to white -->
     var temp = this.color;
     var tga = this.ctx.globalAlpha;
     this.setcolor([255, 255, 255, 255]);
@@ -452,6 +464,7 @@ class Canvas {
       else x.style.backgroundColor = "";
     })
   }
+  <!-- function to save images -->
   save() {
     this.canvas.toBlob(function (blob) {
       var url = URL.createObjectURL(blob);
