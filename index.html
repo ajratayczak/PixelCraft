@@ -434,6 +434,10 @@ class Canvas {
   }
   <!-- drawing function -->
   draw(x, y, count) {
+      /* x and y represent grid location (see addEventListener "click")
+      * count is a boolean that helps with undo and redo
+      * if count is true, you don't keep track of it
+      * count is automatically false */
   	if (x >= 0 && x < this.width && y >= 0 && y < this.height) {
         <!-- if statement determines if pixel to be places is on screen -->
     	this.data[x][y] = this.color;
@@ -443,7 +447,8 @@ class Canvas {
   }
   <!-- erasing function -->
   erase(x, y){
-    <!-- sets pixel to white -->
+    <!--uses draw function and
+    grid location to set pixel to white -->
     var temp = this.color;
     var tga = this.ctx.globalAlpha;
     this.setcolor([255, 255, 255, 255]);
