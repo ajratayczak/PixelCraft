@@ -271,6 +271,10 @@ path {
   .menu {
     top:110px;
   }
+  .hidden {
+    display: none;
+  }
+  }
 }
 </style>
 </head>
@@ -300,6 +304,7 @@ path {
     </div>
     </div>
     <canvas id="canvas"></canvas>
+    <canvas class="hidden"></canvas>
     <div id="toolbar">
       <span class="item" onclick="board.setmode(0)" style="background-color: grey;"><i class="fas fa-pencil-alt"></i></span>
       <span class="item" onclick="board.setmode(1)"><i class="fas fa-eraser"></i></span>
@@ -471,6 +476,8 @@ class Canvas {
   }
   <!-- function to save images -->
   save() {
+      /* use for loop to go through data[] to generate new canvas
+      that you can then save */
     this.canvas.toBlob(function (blob) {
       var url = URL.createObjectURL(blob);
       var link = document.createElement('a');
