@@ -287,7 +287,6 @@ path {
   .menu {
     top:110px;
   }
-  }
 }
 </style>
 </head>
@@ -468,8 +467,7 @@ class Canvas {
   }
   <!-- erasing function -->
   erase(x, y){
-    <!--uses draw function and
-    grid location to set pixel to white -->
+    <!--uses draw function and grid location to set pixel to white -->
     var temp = this.color;
     var tga = this.ctx.globalAlpha;
     this.setcolor([255, 255, 255, 255]);
