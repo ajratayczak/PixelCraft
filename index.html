@@ -502,7 +502,7 @@ class Canvas {
         for (let y = 0; y < this.data[0].length; y++) {
             let color = this.data[x][y]
             ctxCopy.fillStyle = "rgba(" + color[0] + "," + color[1] + "," + color[2] + "," + color[3] + ")";
-            this.ctx.fillRect(x, y, 1, 1);
+            ctxCopy.fillRect(x, y, 1, 1);
         }
     }
     canvasCopy.style.display = "block";
