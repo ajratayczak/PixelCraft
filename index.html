@@ -239,6 +239,22 @@ path {
   text-decoration: none;
   color: white;
 }
+#hidden {
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 75%;
+    max-width: 550px;
+    display: none;
+    cursor: crosshair;
+    touch-action: none;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: -webkit-crisp-edges;
+    image-rendering: pixelated;
+    image-rendering: crisp-edges;
+}
 
 @media only screen and (max-width: 600px) {
   #toolbar {
@@ -270,9 +286,6 @@ path {
   }
   .menu {
     top:110px;
-  }
-  #hidden {
-    display: none;
   }
   }
 }
@@ -449,6 +462,7 @@ class Canvas {
         <!-- if statement determines if pixel to be places is on screen -->
     	this.data[x][y] = this.color;
     	this.ctx.fillRect(Math.floor(x * (this.w / this.width)), Math.floor(y * (this.h / this.height)), Math.floor(this.w / this.width), Math.floor(this.h / this.height));
+
     	if (!count && JSON.stringify(this.steps[this.steps.length-1])!==JSON.stringify([x,y,this.color,this.ctx.globalAlpha])) this.steps.push([x,y,this.color,this.ctx.globalAlpha]);
 	}
   }
@@ -480,13 +494,19 @@ class Canvas {
   save() {
       /* use for loop to go through data[] to generate new canvas
       that you can then save */
-    this.canvasCopy = document.querySelector("#hidden");
-    for (let k = 0; k < this.data.length; k++) {
-        for (let h = 0; h < this.data.length; h++) {
-
+    let canvasCopy = document.querySelector("#hidden");
+    canvasCopy.width = this.width;
+    canvasCopy.height = this.height;
+    let ctxCopy = canvasCopy.getContext("2d");
+    for (let x = 0; x < this.data.length; x++) {
+        for (let y = 0; y < this.data[0].length; y++) {
+            let color = this.data[x][y]
+            ctxCopy.fillStyle = "rgba(" + color[0] + "," + color[1] + "," + color[2] + "," + color[3] + ")";
+            this.ctx.fillRect(x, y, 1, 1);
         }
     }
-    this.canvas.toBlob(function (blob) {
+    canvasCopy.style.display = "block";
+    canvasCopy.toBlob(function (blob) {
       var url = URL.createObjectURL(blob);
       var link = document.createElement('a');
       link.download = 'canvas.png';
