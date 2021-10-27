@@ -487,6 +487,9 @@ class Canvas {
         else if (e.ctrlKey && e.key === 'y') {
             board.redo();
         }
+        else if (e.ctrlKey && e.key === 's') {
+            board.save();
+        }
     });
   }
   <!-- drawing function -->
