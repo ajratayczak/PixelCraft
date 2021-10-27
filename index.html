@@ -256,6 +256,35 @@ path {
     image-rendering: crisp-edges;
 }
 
+/* Tooltip container */
+.tooltip {
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted black;
+}
+
+/* Tooltip text */
+.tooltip .tooltiptext {
+    visibility: hidden;
+    min-width: 25px;
+    min-height: 21px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    padding: 5px;
+    border-radius: 6px;
+    font-size: 12px;
+
+    /* Position the tooltip text*/
+    position: absolute;
+    z-index: 1;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+}
+
 @media only screen and (max-width: 600px) {
   #toolbar {
     position: fixed;
@@ -318,18 +347,18 @@ path {
     <canvas id="canvas"></canvas>
     <canvas id="hidden"></canvas>
     <div id="toolbar">
-      <span class="item" onclick="board.setmode(0)" style="background-color: grey;"><i class="fas fa-pencil-alt"></i></span>
-      <span class="item" onclick="board.setmode(1)"><i class="fas fa-eraser"></i></span>
-      <span class="item" onclick="board.setmode(2)"><i class="fas fa-fill"></i></span>
-      <span class="item" onclick="board.setmode(3)"><i class="fas fa-slash"></i></span>
-      <span class="item" onclick="board.setmode(4)"><i class="far fa-circle"></i></span>
-      <span class="item" onclick="board.setmode(5)"><i class="far fa-circle" style="transform: rotateX(45deg);"></i></span>
-      <span class="item" onclick="board.addFrame()"><i class="fas fa-plus"></i></span>
-      <span class="item" onclick="board.undo()"><i class="fas fa-undo"></i></span>
-      <span class="item" onclick="board.redo()"><i class="fas fa-redo"></i></span>
-      <span class="item" onclick="board.clear()"><i class="fas fa-trash"></i></span>
-      <span class="item" onclick="board.addImage()"><i class="fa fa-upload"></i></span>
-      <span class="item" onclick="Frames.open()"><i class="fas fa-eye"></i></span>
+      <span class="item tooltip" onclick="board.setmode(0)" style="background-color: grey;"><i class="fas fa-pencil-alt"></i><span class="tooltiptext">Pencil</span></span>
+      <span class="item tooltip" onclick="board.setmode(1)"><i class="fas fa-eraser"></i><span class="tooltiptext">Eraser</span></span>
+      <span class="item tooltip" onclick="board.setmode(2)"><i class="fas fa-fill"></i><span class="tooltiptext">Fill</span></span>
+      <span class="item tooltip" onclick="board.setmode(3)"><i class="fas fa-slash"></i><span class="tooltiptext">Line</span></span>
+      <span class="item tooltip" onclick="board.setmode(4)"><i class="far fa-circle"></i><span class="tooltiptext">Circle</span></span>
+      <span class="item tooltip" onclick="board.setmode(5)"><i class="far fa-circle" style="transform: rotateX(45deg);"></i><span class="tooltiptext">Oval</span></span>
+      <span class="item tooltip" onclick="board.addFrame()"><i class="fas fa-plus"></i><span class="tooltiptext">Add Frame</span></span>
+      <span class="item tooltip" onclick="board.undo()"><i class="fas fa-undo"></i><span class="tooltiptext">Undo</span></span>
+      <span class="item tooltip" onclick="board.redo()"><i class="fas fa-redo"></i><span class="tooltiptext">Redo</span></span>
+      <span class="item tooltip" onclick="board.clear()"><i class="fas fa-trash"></i><span class="tooltiptext">Clear</span></span>
+      <span class="item tooltip" onclick="board.addImage()"><i class="fa fa-upload"></i><span class="tooltiptext">Add Image</span></span>
+      <span class="item tooltip" onclick="Frames.open()"><i class="fas fa-eye"></i><span class="tooltiptext">Switch Frames</span></span>
     </div>
     <div id="palette"></div>
 </body>
