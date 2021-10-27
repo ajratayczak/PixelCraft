@@ -451,9 +451,8 @@ class Canvas {
       this.active = false;
     });
 
-    this.canvas.addEventListener('keydown', e => {
+    document.addEventListener('keydown', e => {
         if (e.ctrlKey && e.key === 'z') {
-            alert('Undo!');
             board.undo();
         }
     });
