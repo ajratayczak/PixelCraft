@@ -484,6 +484,9 @@ class Canvas {
         if (e.ctrlKey && e.key === 'z') {
             board.undo();
         }
+        else if (e.ctrlKey && e.key === 'y') {
+            board.redo();
+        }
     });
   }
   <!-- drawing function -->
