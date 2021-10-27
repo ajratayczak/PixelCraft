@@ -490,6 +490,9 @@ class Canvas {
         else if (e.ctrlKey && e.key === 's') {
             board.save();
         }
+        else if (e.key === 'p') {
+            board.setmode(0);
+        }
     });
   }
   <!-- drawing function -->
