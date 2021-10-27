@@ -450,6 +450,13 @@ class Canvas {
     this.canvas.addEventListener("mouseup", e => {
       this.active = false;
     });
+
+    this.canvas.addEventListener('keydown', e => {
+        if (e.ctrlKey && e.key === 'z') {
+            alert('Undo!');
+            board.undo();
+        }
+    });
   }
   <!-- drawing function -->
   draw(x, y, count) {
