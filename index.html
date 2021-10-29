@@ -629,6 +629,7 @@ class Canvas {
   	});
   }
 
+
   saveInLocal(){
     /*let a = this.frames.map(frame=> [frame[0].src,frame[1]]);
     let f =  JSON.stringify(a);*/
@@ -681,6 +682,15 @@ class Canvas {
     }
   }
 }
+
+function hexToRGB(hexCode) {
+    var hex = hexCode;
+    var red = parseInt(hex[1]+hex[2],16);
+    var green = parseInt(hex[3]+hex[4],16);
+    var blue = parseInt(hex[5]+hex[6],16);
+    return [red, green, blue, 255];
+}
+
 class Popup {
   constructor(s) {
     this.s = s;
@@ -720,10 +730,10 @@ class Frames {
 }
 
 window.onload = function () {
-  let canvasData = localStorage.getItem('pc-canvas-data');
+  //let canvasData = localStorage.getItem('pc-canvas-data');
+    let canvasData = null;
   if(canvasData){
     data = JSON.parse(canvasData);
-    console.log(data);
     window.colors = data.colors;
     window.board = new Canvas(data.width, data.height);
     let img = new Image();
@@ -802,8 +812,9 @@ function newProject(){
   document.querySelector(".menu").style.display = "none";
   localStorage.removeItem('pc-canvas-data');
   window.dim = new Popup("#popup");
+  var black1 = hexToRGB("#234F1E");
   window.colors = [
-    [0, 0, 0, 255],
+    black1,
     [127, 127, 127, 255],
     [136, 0, 21, 255],
     [237, 28, 36, 255],
