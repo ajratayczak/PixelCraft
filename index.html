@@ -190,6 +190,19 @@ body {
   cursor: pointer;
 }
 
+#editColor{
+    position: fixed;
+    top: 15px;
+    right: 10px;
+    padding-left: 2px;
+    padding-right: 2px;
+    padding-top: 0px;
+    font-size: 10pt;
+    height: 24px;
+    border: 1px solid black;
+
+}
+
 path {
   fill: white;
 }
@@ -360,6 +373,7 @@ path {
       <span class="item tooltip" onclick="board.addImage()"><i class="fa fa-upload"></i><span class="tooltiptext">Add Image</span></span>
       <span class="item tooltip" onclick="Frames.open()"><i class="fas fa-eye"></i><span class="tooltiptext">Switch Frames</span></span>
     </div>
+    <button id="editColor" onclick="board.promptMe()"><b>Edit Color</b></button>
     <div id="palette"></div>
 </body>
 
@@ -530,6 +544,19 @@ class Canvas {
     this.color = color;
     this.ctx.fillStyle = "rgba(" + color[0] + "," + color[1] + "," + color[2] + "," + color[3] + ")";
   }
+
+  changeColor(hexCode){
+      var color = hexToRGB(hexCode);
+      this.color = color;
+      this.ctx.fillStyle = "rgba(" + color[0] + "," + color[1] + "," + color[2] + "," + color[3] + ")";
+      window.colors[1] = color;
+  }
+
+  promptMe(){
+      var userHex = prompt("Please provide a hexcode");
+      this.changeColor(userHex);
+  }
+
   setmode(i) {
     tools = [false, false, false, false, false, false];
     tools[i] = true;
@@ -812,9 +839,9 @@ function newProject(){
   document.querySelector(".menu").style.display = "none";
   localStorage.removeItem('pc-canvas-data');
   window.dim = new Popup("#popup");
-  var black1 = hexToRGB("#234F1E");
+  var black = hexToRGB("#000000");
   window.colors = [
-    black1,
+    black,
     [127, 127, 127, 255],
     [136, 0, 21, 255],
     [237, 28, 36, 255],
