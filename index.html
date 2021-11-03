@@ -402,6 +402,7 @@ class Canvas {
     this.width = width;
     this.height = height;
     this.canvas.style.display = "block";
+    var selectedColor = "";
     this.canvas.style.height = Math.floor((height / width) * this.canvas.clientWidth) + "px";
     /* useful for save function? */
     this.w = +this.canvas.width;
@@ -550,6 +551,9 @@ class Canvas {
       this.color = color;
       this.ctx.fillStyle = "rgba(" + color[0] + "," + color[1] + "," + color[2] + "," + color[3] + ")";
       window.colors[1] = color;
+      this.selectedColor.style.backgroundColor = "rgba(" + color[0] + "," + color[1] + "," + color[2] + "," + color[3] + ")";
+      this.selectedColor.onclick = "board.setcolor(color);act(this);";
+      this.selectedColor.oncontextmenu = "board.setcolor(color);act(this);board.ctx.globalAlpha=+prompt('Transparency(0-1)?')";
   }
 
   promptMe(){
@@ -805,7 +809,14 @@ window.onload = function () {
   else {
     newProject();
   }
-  document.querySelector("#palette").innerHTML = colors.map(x => `<span class="item" style="background-color: rgb(${x[0]},${x[1]},${x[2]})" onclick="board.setcolor([${x}]);act(this);" oncontextmenu="board.setcolor([${x}]);act(this);board.ctx.globalAlpha=+prompt('Transparency(0-1)?')"></span>`).join("\n");
+  document.querySelector("#palette").innerHTML = colors.map((x, i) => {
+                                                                   return `<span class="item" style="background-color: rgb(${x[0]},${x[1]},${x[2]})"
+                                                                   onclick="board.setcolor([${x}]);act(this);"
+                                                                   oncontextmenu="board.setcolor([${x}]);
+                                                                        act(this);
+                                                                        board.ctx.globalAlpha=+prompt('Transparency(0-1)?')"
+                                                                   id="color${i}"></span>`
+                                                                   }).join("\n");
 
   document.querySelector("#palette").addEventListener("contextmenu",e=>e.preventDefault());
 }
@@ -878,6 +889,7 @@ function filler(x, y, cc) {
 function act(clr) {
   document.querySelectorAll("#palette .item").forEach(x => x.style.boxShadow = "");
   clr.style.boxShadow = "10px 10px 10px 10px rgba(0,0,0,0.5)";
+  board.selectedColor = clr;
 }
 
 window.onbeforeunload = function () {
