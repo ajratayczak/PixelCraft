@@ -550,10 +550,19 @@ class Canvas {
       var color = hexToRGB(hexCode);
       this.color = color;
       this.ctx.fillStyle = "rgba(" + color[0] + "," + color[1] + "," + color[2] + "," + color[3] + ")";
-      window.colors[1] = color;
       this.selectedColor.style.backgroundColor = "rgba(" + color[0] + "," + color[1] + "," + color[2] + "," + color[3] + ")";
-      this.selectedColor.onclick = "board.setcolor(color);act(this);";
-      this.selectedColor.oncontextmenu = "board.setcolor(color);act(this);board.ctx.globalAlpha=+prompt('Transparency(0-1)?')";
+      var obj = this.selectedColor;
+      this.selectedColor.onclick = () => {
+          alert("onclick" + color);
+          this.setcolor(color);
+          act(obj);
+      };
+      this.selectedColor.oncontextmenu = () => {
+          alert("oncontectmenu" + color)
+          this.setcolor(color);
+          act(obj);
+          this.ctx.globalAlpha=+prompt('Transparency(0-1)?');
+      };
   }
 
   promptMe(){
@@ -887,6 +896,7 @@ function filler(x, y, cc) {
 }
 
 function act(clr) {
+  alert(clr.style.boxShadow)
   document.querySelectorAll("#palette .item").forEach(x => x.style.boxShadow = "");
   clr.style.boxShadow = "10px 10px 10px 10px rgba(0,0,0,0.5)";
   board.selectedColor = clr;
