@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="28589163-b10f-410a-ba6d-886b5192fdc0" name="Changes" comment="add second canvas tag">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,6 +44,7 @@
       <workItem from="1635775427888" duration="2263000" />
       <workItem from="1635948273673" duration="3487000" />
       <workItem from="1636120356430" duration="2957000" />
+      <workItem from="1636556609525" duration="261000" />
     </task>
     <task id="LOCAL-00001" summary="add second canvas tag">
       <created>1634913199912</created>
