@@ -431,15 +431,31 @@ class Canvas {
         this.draw(x, y);
         this.setcolor(temp);
         this.ctx.globalAlpha = tga;
-      } else if (tools[Tool.line]) {
-        lc.push(new Point(x, y));
-        if (lc.length == 2) {
-          var lp = line(lc[0], lc[1]);
-          lc = [];
-          var p;
-          for (p of lp) this.draw(p.x, p.y);
-        }
-      } else if (tools[Tool.circle]) {
+      }
+      /* Line event listener
+      * .push adds elements to the end of the array
+      * lc is an empty list that you add the two points to */
+      else if (tools[Tool.line]) {
+          lc.push(new Point(x, y));
+          if (lc.length == 2) {
+              var lp = line(lc[0], lc[1]);
+              lc = [];
+              var p;
+              for (p of lp) this.draw(p.x, p.y);
+          }
+      } /* first draft of selection
+      else if (tools[Tool.select]) {
+          lc.push(new Point(x, y));
+          if (lc.length == 2) {
+              var lp = rect(x-cord of rectangle starting point, y-cord of rectangle starting point, width, height);
+              lc = [];
+              var p;
+              for (p of lp) this.draw(p.x, p.y);
+          }
+      }
+      need to find a way to store the values inside the rectangle without filling them in
+      then need to allow user to click a new starting point for the rectangle
+      */ else if (tools[Tool.circle]) {
         var centre = new Point(x, y);
         var radius = +prompt("radius?");
         var lp = circle(radius, centre);
