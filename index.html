@@ -372,6 +372,7 @@ path {
       <span class="item tooltip" onclick="board.clear()"><i class="fas fa-trash"></i><span class="tooltiptext">Clear</span></span>
       <span class="item tooltip" onclick="board.addImage()"><i class="fa fa-upload"></i><span class="tooltiptext">Add Image</span></span>
       <span class="item tooltip" onclick="Frames.open()"><i class="fas fa-eye"></i><span class="tooltiptext">Switch Frames</span></span>
+      <span class="item tooltip" onclick="board.setmode(6)"><i class="far fa-square"></i><span class="tooltiptext">Rectangle</span></span>
     </div>
     <button id="editColor" onclick="board.promptMe()"><b>Edit Color</b></button>
     <div id="palette"></div>
@@ -387,12 +388,13 @@ var Tool = {
   "line": 3,
   "circle": 4,
   "ellipse": 5,
-  "addFrame": 6,
-  "undo": 7,
-  "redo": 8,
-  "clearCanvas": 9
+  "rectangle": 6,
+  "addFrame": 7,
+  "undo": 8,
+  "redo": 9,
+  "clearCanvas": 10
 };
-var tools = [true, false, false, false, false, false];
+var tools = [true, false, false, false, false, false, false];
 var lc = [];
 class Canvas {
   constructor(width, height) {
@@ -443,16 +445,17 @@ class Canvas {
               var p;
               for (p of lp) this.draw(p.x, p.y);
           }
-      } /* first draft of selection
-      else if (tools[Tool.select]) {
+      } /* first draft of selection */
+      else if (tools[Tool.rectangle]) {
           lc.push(new Point(x, y));
           if (lc.length == 2) {
-              var lp = rect(x-cord of rectangle starting point, y-cord of rectangle starting point, width, height);
+              var lp = drawrect(lc[0], lc[1]);
               lc = [];
               var p;
               for (p of lp) this.draw(p.x, p.y);
           }
       }
+      /*
       need to find a way to store the values inside the rectangle without filling them in
       then need to allow user to click a new starting point for the rectangle
       */ else if (tools[Tool.circle]) {
