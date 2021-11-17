@@ -366,13 +366,14 @@ path {
       <span class="item tooltip" onclick="board.setmode(3)"><i class="fas fa-slash"></i><span class="tooltiptext">Line</span></span>
       <span class="item tooltip" onclick="board.setmode(4)"><i class="far fa-circle"></i><span class="tooltiptext">Circle</span></span>
       <span class="item tooltip" onclick="board.setmode(5)"><i class="far fa-circle" style="transform: rotateX(45deg);"></i><span class="tooltiptext">Oval</span></span>
+      <span class="item tooltip" onclick="board.setmode(6)"><i class="far fa-square"></i><span class="tooltiptext">Rectangle</span></span>
+      <span class="item tooltip" onclick="board.setmode(7)"><i class="far fa-caret-square-up"></i><span class="tooltiptext">Triangle</span></span>
       <span class="item tooltip" onclick="board.addFrame()"><i class="fas fa-plus"></i><span class="tooltiptext">Add Frame</span></span>
       <span class="item tooltip" onclick="board.undo()"><i class="fas fa-undo"></i><span class="tooltiptext">Undo</span></span>
       <span class="item tooltip" onclick="board.redo()"><i class="fas fa-redo"></i><span class="tooltiptext">Redo</span></span>
       <span class="item tooltip" onclick="board.clear()"><i class="fas fa-trash"></i><span class="tooltiptext">Clear</span></span>
       <span class="item tooltip" onclick="board.addImage()"><i class="fa fa-upload"></i><span class="tooltiptext">Add Image</span></span>
       <span class="item tooltip" onclick="Frames.open()"><i class="fas fa-eye"></i><span class="tooltiptext">Switch Frames</span></span>
-      <span class="item tooltip" onclick="board.setmode(6)"><i class="far fa-square"></i><span class="tooltiptext">Rectangle</span></span>
     </div>
     <button id="editColor" onclick="board.promptMe()"><b>Edit Color</b></button>
     <div id="palette"></div>
@@ -389,12 +390,13 @@ var Tool = {
   "circle": 4,
   "ellipse": 5,
   "rectangle": 6,
-  "addFrame": 7,
-  "undo": 8,
-  "redo": 9,
-  "clearCanvas": 10
+  "triangle": 7,
+  "addFrame": 8,
+  "undo": 9,
+  "redo": 10,
+  "clearCanvas": 11
 };
-var tools = [true, false, false, false, false, false, false];
+var tools = [true, false, false, false, false, false, false, false];
 var lc = [];
 class Canvas {
   constructor(width, height) {
@@ -455,10 +457,16 @@ class Canvas {
               for (p of lp) this.draw(p.x, p.y);
           }
       }
-      /*
-      need to find a way to store the values inside the rectangle without filling them in
-      then need to allow user to click a new starting point for the rectangle
-      */ else if (tools[Tool.circle]) {
+      else if (tools[Tool.triangle]) {
+          lc.push(new Point(x, y));
+          if (lc.length == 3) {
+              var lp = triangle(lc[0], lc[1], lc[2]);
+              lc = [];
+              var p;
+              for (p of lp) this.draw(p.x, p.y);
+          }
+      }
+      else if (tools[Tool.circle]) {
         var centre = new Point(x, y);
         var radius = +prompt("radius?");
         var lp = circle(radius, centre);
