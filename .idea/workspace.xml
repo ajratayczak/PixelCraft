@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="28589163-b10f-410a-ba6d-886b5192fdc0" name="Changes" comment="add second canvas tag">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/Shapes.js" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Shapes.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -67,7 +66,7 @@
       <workItem from="1637158929710" duration="4250000" />
       <workItem from="1637333281237" duration="3060000" />
       <workItem from="1637507132087" duration="2832000" />
-      <workItem from="1638151174474" duration="2187000" />
+      <workItem from="1638151174474" duration="2826000" />
     </task>
     <task id="LOCAL-00001" summary="add second canvas tag">
       <created>1634913199912</created>
