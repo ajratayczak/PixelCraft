@@ -12,14 +12,14 @@ https://rgab1508.github.io/PixelCraft
 
 On opening, you will get a screen as Follows
 
-![PixelCraft overview](images/overview.png)
+![PixelCraft overview](images/overview2.jpg)
 
 You can choose Any Dimensions for your Canvas, *16 X 16* is the default dimension.  
 Dimensions below *128 X 128* are preferable for smooth operation and GIF creation.
 
 ## Toolbar
 
-![PixelCraft overview](images/toolbar.png)
+![PixelCraft overview](images/toolbar2.jpg)
 
 The List Of all Tools and methods to use them are as follows
 
@@ -67,19 +67,19 @@ The Ellipse Tool is used to draw an ellipse with given centre and it's radius al
 
 The Rectangle Tool is used to draw a rectangle with given top left and bottom right points.
 
-![Rectangle Tool](https://user-images.githubusercontent.com/17960677/96024638-a0fd9a00-0e71-11eb-9171-16944bf95b40.png)
+![Rectangle Tool](images/square.png)
 
 ### Triangle Tool
 
 The Triange Tool is used to draw a triangle with three given point.
 
-![Triangle Tool](https://user-images.githubusercontent.com/17960677/96024638-a0fd9a00-0e71-11eb-9171-16944bf95b40.png)
+![Triangle Tool](images/triangle.png)
 
 ### Star Tool
 
 The Star Tool is used to draw a star with given square bounds.
 
-![Ellipse Tool](https://user-images.githubusercontent.com/17960677/96024638-a0fd9a00-0e71-11eb-9171-16944bf95b40.png)
+![Ellipse Tool](images/star.png)
 
 ## GIF Tools
 
