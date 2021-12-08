@@ -138,7 +138,7 @@ Once you are done with making your pixel art or animation frames you can export 
 
 ### Saving Image
 
-Save Image option is available in the Drop-down on top left corner, It will download a file named *canvas.png* with dimensions *10 x width X 10 x Height*
+Save Image option is available in the Drop-down on top left corner, It will download a file named *canvas.png* with dimensions *width X height*
 
 ### Saving GIF
 
@@ -150,7 +150,7 @@ The Following colors are available on the color Palette.
 
 ![Color Palette](https://user-images.githubusercontent.com/17960677/96028508-fdaf8380-0e76-11eb-8502-18d49d96d059.png)
 
-You can select any color by clicking on it.  
+You can select any color by clicking on it. You can also click on the *edit color* button after clicking on a color to change that color to a new Hex code.
 
 You can also set color Transparency to create translucent colors and create color combinations. This property can be used to create complex patterns with greater flexibility.
 
