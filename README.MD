@@ -63,6 +63,24 @@ The Ellipse Tool is used to draw an ellipse with given centre and it's radius al
 
 ![Ellipse Tool](https://user-images.githubusercontent.com/17960677/96024638-a0fd9a00-0e71-11eb-9171-16944bf95b40.png)
 
+### Rectangle Tool
+
+The Rectangle Tool is used to draw a rectangle with given top left and bottom right points.
+
+![Rectangle Tool](https://user-images.githubusercontent.com/17960677/96024638-a0fd9a00-0e71-11eb-9171-16944bf95b40.png)
+
+### Triangle Tool
+
+The Triange Tool is used to draw a triangle with three given point.
+
+![Triangle Tool](https://user-images.githubusercontent.com/17960677/96024638-a0fd9a00-0e71-11eb-9171-16944bf95b40.png)
+
+### Star Tool
+
+The Star Tool is used to draw a star with given square bounds.
+
+![Ellipse Tool](https://user-images.githubusercontent.com/17960677/96024638-a0fd9a00-0e71-11eb-9171-16944bf95b40.png)
+
 ## GIF Tools
 
 ### Add Frame
