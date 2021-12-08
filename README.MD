@@ -107,7 +107,8 @@ This tool displays a Popup with all the current frames in the Frame stack.
 
 ### Undo/Redo
 
-The Undo/Redo Functionality is not very advanced and is only capable of undoing/redoing 1 pixel at a time.  
+The Undo/Redo Functionality is not very advanced and is only capable of undoing/redoing 1 pixel at a time. You can use these by clicking their respective buttons or by using 
+*ctrl + z* and *ctrl + y*.
 It is only useful for correcting small mistakes, hence, it is advised to draw with care, or, add a frame if doing a big change with chances of mistake.
 
 ![Undo/Redo Tool](https://user-images.githubusercontent.com/17960677/96026461-23875900-0e74-11eb-8682-479b33894a4f.png)
@@ -148,7 +149,7 @@ After making all the frames and making necessary changes in Frames Panel, you ca
 
 The Following colors are available on the color Palette.
 
-![Color Palette](https://user-images.githubusercontent.com/17960677/96028508-fdaf8380-0e76-11eb-8502-18d49d96d059.png)
+![Color Palette](images/colors.png)
 
 You can select any color by clicking on it. You can also click on the *edit color* button after clicking on a color to change that color to a new Hex code.
 
