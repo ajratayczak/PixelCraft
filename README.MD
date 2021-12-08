@@ -26,18 +26,21 @@ The List Of all Tools and methods to use them are as follows
 ### Pencil
 
 The Pencil tool is the most basic tool and is used to draw pixels Freehand
+You can access this tool by clicking on it or using the keyboard shortcut, *ctrl + p*
 
 ![Pencil Tool](https://user-images.githubusercontent.com/17960677/96023223-b83b8800-0e6f-11eb-8af1-0cfab42c19d7.png)
 
 ### Eraser
 
 The Eraser tool is used to erase a given pixel 1 pixel at a time. It has dimensions *1 X 1* and is fixed.
+You can access this tool by clicking on it or using the keyboard shortcut, *ctrl + e*
 
 ![Eraser Tool](https://user-images.githubusercontent.com/17960677/96023372-f5077f00-0e6f-11eb-965f-815b37f0d7b2.png)
 
 ### Paint Tool
 
 The Paint tool is used to Flood Fill a given color with a new color. It works smoothly for dimensions under 128 X 128.
+You can access this tool by clicking on it or using the keyboard shortcut, *ctrl + f*
 
 ![Paint tool](https://user-images.githubusercontent.com/17960677/96023668-66473200-0e70-11eb-81a2-9313b1580926.png)
 
@@ -139,7 +142,7 @@ Once you are done with making your pixel art or animation frames you can export 
 
 ### Saving Image
 
-Save Image option is available in the Drop-down on top left corner, It will download a file named *canvas.png* with dimensions *width X height*
+Save Image option is available in the Drop-down on top left corner, It will download a file named *canvas.png* with dimensions *width X height*. You can also save an image by using the keyboard shortcut *ctrl + s*
 
 ### Saving GIF
 
