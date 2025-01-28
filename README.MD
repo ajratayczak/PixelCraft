@@ -6,7 +6,10 @@ It is mobile-friendly and is very easy to use.
 ![PixelCraft](icons/logo.png)
 
 ## Overview
-This App is Available at both these locations
+My updated version of PixelCraft is available at
+https://ajratayczak.github.io/PixelCraft/
+
+This original app is available at both these locations
 https://pixelcraft.web.app/
 https://rgab1508.github.io/PixelCraft
 
